@@ -92,11 +92,11 @@ void loop() {
       String(millis()) + "}";
 
   client.publish(
-      "iitjammu/summer26/advait/temperature",
+      "iitjammu/summer26/yuvia/temperature",
       tempJson.c_str());
 
   client.publish(
-      "iitjammu/summer26/advait/humidity",
+      "iitjammu/summer26/yuvia/humidity",
       humJson.c_str());
 
   delay(5000);
