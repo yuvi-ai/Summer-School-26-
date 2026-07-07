@@ -1,0 +1,48 @@
+Start
+Initialize ESP32
+Initialize DHT11
+Initialize LDR
+Initialize LCD
+Initialize Heater LED
+Initialize Fan LED
+Initialize Grow Light LED
+Initialize MQTT
+Loop
+Read Temperature
+Read Humidity
+Read LDR Value
+Calculate Running Average of Last 10 LDR Readings
+If Temperature < 18
+Turn ON Heater
+Turn OFF Fan
+Else If Temperature > 22
+Turn ON Fan
+Turn OFF Heater
+Else
+Turn OFF Heater
+Turn OFF Fan
+End If
+If Light Level is Low
+Turn ON Grow Light
+Else
+Turn OFF Grow Light
+End If
+Display Temperature
+Display Humidity
+Display Light Level
+Publish Data to MQTT
+Wait 3 Seconds
+Repeat
+Sample LCD display 
+Temp : 20°C
+Humidity : 65%
+Light : Normal
+Heater : OFF
+Fan : OFF
+Grow Light : OFF
+Sample serial monitor output 
+Time,Temp,Humidity,Light,Heater,Fan,GrowLight
+10:00:00,19.5,64,420,OFF,OFF,OFF
+10:00:03,17.2,63,300,ON,OFF,ON
+10:00:06,22.8,66,520,OFF,ON,OFF
+10:00:09,20.1,65,410,OFF,OFF,OFF
