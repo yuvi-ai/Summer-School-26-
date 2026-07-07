@@ -1,0 +1,32 @@
+Start
+Initialize ESP32
+Initialize Soil Moisture Sensor
+Initialize LDR Sensor
+Initialize Relay (Pump)
+Initialize Push Button
+Initialize LCD
+Connect to Wi-Fi
+Loop
+Read Soil Moisture Value
+Read LDR Value
+If Manual Button is Pressed
+    Turn Pump ON
+    Wait 5 Minutes
+    Turn Pump OFF
+Else
+  If Soil is Dry
+ If LDR Detects Rain (Low Light)
+            Pump OFF
+   Else
+            Pump ON
+        End If
+   Else
+        Pump OFF
+    End If
+End If
+Display Moisture Percentage
+Display Pump Status
+Display Last Watered Time
+Upload Data to Google Sheets
+Wait 30 Minutes
+Repeat
