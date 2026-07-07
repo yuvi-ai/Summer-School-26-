@@ -1,0 +1,43 @@
+.                  START
+                   │
+                   ▼
+           Initialize ESP32
+                   │
+                   ▼
+     Initialize PIR Sensor, Buzzer,
+        LEDs and Telegram
+                   │
+                   ▼
+      Read Current Time Window
+                   │
+                   ▼
+      Is Time Within Security Hours?
+              │             │
+             No            Yes
+              │             │
+              ▼             ▼
+        Keep Monitoring   Read PIR Sensor
+                                │
+                                ▼
+                        Motion Detected?
+                           │         │
+                          No        Yes
+                           │         │
+                           ▼         ▼
+                    Continue Loop   Turn ON LED 1
+                                    Play Warning Beep
+                                         │
+                                         ▼
+                                    Turn ON LED 2
+                                    Play Alarm Beep
+                                         │
+                                         ▼
+                                    Turn ON LED 3
+                                    Play Urgent Beep
+                                         │
+                                         ▼
+                             Send Telegram Alert
+                             Log Event with Time
+                                         │
+                                         ▼
+                                   Repeat Loop
