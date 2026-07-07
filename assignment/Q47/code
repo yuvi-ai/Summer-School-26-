@@ -1,0 +1,91 @@
+Start
+Initialize ESP32
+Initialize MAX30102 Sensor
+Initialize LCD
+Initialize Red LED
+Initialize Data Log File
+Loop
+Read Heart Rate
+Read SpO2
+Calculate 5 Reading Rolling Average
+Display Heart Rate on LCD
+Display SpO2 on LCD
+If Heart Rate < 50 OR Heart Rate > 120
+Turn ON Red LED
+Else If SpO2 < 94
+Turn ON Red LED
+Else
+Turn OFF Red LED
+End If
+Save Heart Rate and SpO2 to health_log.csv
+Wait 2 Seconds
+Repeat
+Sample serial monitor output 
+Time,Heart Rate,SpO2,Status
+10:00:00,76,98,NORMAL
+10:00:02,82,97,NORMAL
+10:00:04,124,96,HIGH HEART RATE
+10:00:06,78,92,LOW SPO2
+10:00:08,79,98,NORMAL
+Ans 48
+Street Lighting System
+Sensors Needed
+•	LDR Sensor 
+•	PIR Motion Sensor 
+Microcontroller
+•	ESP32 
+Connectivity
+•	Wi-Fi (MQTT) 
+Data Flow
+LDR + PIR Sensor → ESP32 → MQTT → Cloud → Dashboard
+Approx. cost
+ESP32 - ₹500
+LDR - ₹50
+PIR - ₹120
+Relay - ₹100
+LED - ₹50
+Total ≈ ₹820
+Start
+Initialize ESP32
+Initialize LDR
+Initialize PIR
+Initialize Relay
+Loop
+Read LDR
+Read PIR
+If Light is Low AND Motion Detected
+Turn ON Street Light
+Else
+Turn OFF Street Light
+End If
+Send Status to Cloud
+Repeat
+Air Quality Monitoring System
+Sensors Needed
+•	MQ-2 Gas Sensor 
+•	DHT11 
+Microcontroller
+•	ESP32 
+Connectivity
+•	Wi-Fi (MQTT) 
+Data Flow
+MQ2 + DHT11 → ESP32 → MQTT → Cloud → Dashboard
+Approximate Cost
+ESP32 - ₹500
+MQ-2 - ₹180
+DHT11 - ₹120
+Total ≈ ₹800
+Pseudo Code
+Start
+Initialize ESP32
+Initialize MQ2
+Initialize DHT11
+Loop
+Read Gas Value
+Read Temperature
+Read Humidity
+If Gas Value is High
+Send Alert
+End If
+Upload Data to Cloud
+Repeat
