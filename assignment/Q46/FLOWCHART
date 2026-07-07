@@ -1,0 +1,42 @@
+.                  START
+                   │
+                   ▼
+            Initialize ESP32
+                   │
+                   ▼
+     Initialize HC-SR04, LEDs,
+     Buzzer, Wi-Fi & Dashboard
+                   │
+                   ▼
+      Read Ultrasonic Distance
+                   │
+                   ▼
+ Calculate Moving Average (10 Readings)
+                   │
+                   ▼
+      Is Distance > 30 cm?
+            │             │
+          Yes            No
+            │             │
+            ▼             ▼
+     NORMAL Level   Is Distance > 15 cm?
+                          │            │
+                        Yes           No
+                          │            │
+                          ▼            ▼
+                  WARNING Level   CRITICAL Level
+                          │            │
+          Yellow LED + Medium Beep   Red LED + Fast Beep
+                          │            │
+                          └──────┬─────┘
+                                 ▼
+          Send Alert via Wi-Fi/Bluetooth
+                                 │
+                                 ▼
+      Update Live Chart on Dashboard
+                                 │
+                                 ▼
+            Wait 2 Seconds
+                                 │
+                                 ▼
+               Repeat Loop
