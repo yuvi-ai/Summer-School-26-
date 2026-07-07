@@ -1,0 +1,58 @@
+StartInitialize ESP32
+Initialize MQ-2 Sensor
+Initialize DHT11 Sensor
+Initialize RGB LED
+Initialize Buzzer
+Initialize Bluetooth
+Loop Forever
+Read MQ-2 Gas Value
+Read Temperature
+Read Humidity
+
+If Gas Value < Safe Threshold
+    Turn ON Green LED
+    Turn OFF Yellow & Red LED
+    Buzzer OFF
+   Severity = SAFE
+Else If Gas Value < Danger Threshold
+    Turn ON Yellow LED
+    Turn OFF Green & Red LED
+    Play Medium Beep
+    Severity = MODERATE
+Else
+    Turn ON Red LED
+    Turn OFF Green & Yellow LED
+    Play Long Beep
+    Severity = DANGER
+End If
+Print Timestamp
+Print Gas Value
+Print Temperature
+Print Humidity
+Print Severity
+If Severity is MODERATE or DANGER
+    Send Bluetooth Alert
+
+End I
+Wait 2 Seconds
+Repeat
+Sample serial monitor output-
+Timestamp,MQ2 Value,DHT11 Temp,DHT11 Humidity,Severity
+
+00:01,220 ppm,23.4°C,49%,SAFE
+00:02,280 ppm,23.5°C,50%,SAFE
+00:03,420 ppm,23.6°C,49%,MODERATE
+00:04,710 ppm,23.8°C,48%,DANGER
+Sample mobile alert-
+SAFE Gas: 210 ppm
+Temperature: 22.8°C
+Humidity: 51%
+Status: SAFE
+WARNING Moderate Smoke Detected
+Gas: 430 ppm
+Check Fireplace
+DANGER 
+Smoke Level Critical
+Gas: 765 ppm
+Open Windows
+Leave Room if Necessary
