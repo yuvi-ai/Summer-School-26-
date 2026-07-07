@@ -1,0 +1,46 @@
+                START
+                  │
+                  ▼
+          Initialize ESP32
+                  │
+                  ▼
+     Initialize Keypad, LCD/OLED,
+     Bluetooth and Servo Motor
+                  │
+                  ▼
+       User Enters 4-digit PIN
+                  │
+                  ▼
+          Is PIN Correct?
+            │          │
+           No         Yes
+            │          │
+            ▼          ▼
+      Display Wrong   Generate
+         PIN         6-digit OTP
+            │          │
+            ▼          ▼
+      Log Failure   Send OTP via
+                    Bluetooth
+                         │
+                         ▼
+                 Start 30-sec Timer
+                         │
+                         ▼
+              User Enters OTP
+                         │
+               ┌─────────┴─────────┐
+               ▼                   ▼
+      OTP Correct & Time       Wrong OTP/
+         ≤30 Seconds          Timer Expired
+               │                   │
+               ▼                   ▼
+      Rotate Servo 90°        Access Denied
+      Display Access          Log Failure
+      Granted
+               │
+               ▼
+         Log Success
+               │
+               ▼
+             Repeat
