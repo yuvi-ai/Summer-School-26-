@@ -1,0 +1,52 @@
+.                  START
+                   │
+                   ▼
+            Initialize ESP32
+                   │
+                   ▼
+     Initialize DHT11, LDR, LCD,
+     Heater LED, Fan LED, Grow LED
+                   │
+                   ▼
+   Read Temperature, Humidity & LDR
+                   │
+                   ▼
+   Calculate Running Average of LDR
+        (Last 10 Readings)
+                   │
+                   ▼
+ Is Temperature < 18°C?
+        │              │
+      Yes             No
+        │              │
+        ▼              ▼
+ Heater ON       Is Temperature > 22°C?
+                        │            │
+                      Yes           No
+                        │            │
+                        ▼            ▼
+                    Fan ON      Heater & Fan OFF
+                        │
+                        ▼
+       Is Humidity Between 60–70%?
+                        │
+                        ▼
+      Check Light Intensity (LDR)
+                        │
+                        ▼
+   Is Light Sufficient for 12 Hours?
+              │                 │
+             No                Yes
+              │                 │
+              ▼                 ▼
+        Grow Light ON     Grow Light OFF
+              │
+              ▼
+ Display Values on LCD
+ Publish Data to MQTT
+              │
+              ▼
+        Wait 3 Seconds
+              │
+              ▼
+          Repeat Loop
