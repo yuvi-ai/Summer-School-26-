@@ -1,0 +1,36 @@
+Start
+Initialize ESP32
+Initialize Keypad
+Initialize LCD
+Initialize Bluetooth
+Initialize Servo
+Loop
+Read 4-digit PIN
+If PIN is Correct
+Generate Random 6-digit OTP
+Send OTP via Bluetooth
+Start 30-second Timer
+Read OTP from User
+If OTP is Correct AND Time < 30 Seconds
+Rotate Servo to 90 Degrees
+Display "Access Granted"
+Log Success to Serial Monitor
+Else
+Display "Access Denied"
+Log Failure to Serial Monitor
+End If
+Else
+Display "Wrong PIN"
+Log Failure to Serial Monitor
+End If
+Repeat
+Sample serial monitor output
+Time,PIN,OTP,Status
+10:00:15,1234,654321,ACCESS GRANTED
+10:05:40,1234,125678,WRONG OTP
+10:10:12,9999,------,WRONG PIN
+10:15:50,1234,Expired,OTP TIMEOUT
+Sample mobile alert 
+SMART DOOR LOCK
+Your OTP is: 654321
+Valid for 30 seconds.
