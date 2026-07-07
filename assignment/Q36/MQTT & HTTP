@@ -1,0 +1,15 @@
+Feature                                   	MQTT                                                                                 	HTTP
+Architecture Pattern       	Publish/Subscribe (Broker-based)      	                                                         Client-Server
+Data Transfer Model      	Devices publish messages to a broker, subscribers receive them	                Client sends request, server sends response
+Power Consumptio                      	Low	                                                                                   High
+Latency                      	Low (Fast communication)	                                                              Higher than MQTT
+IoT Suitability         	Best for IoT devices and real-time communication                           	Better for websites, APIs, and web applications
+Security Considerations    	Supports SSL/TLS, username/password authentication               	Supports HTTPS (SSL/TLS), authentication, and encryption
+
+Protocol I will choose will be MQTT 
+Reason:
+•	Low power consumption, which helps battery-powered sensors. 
+•	Low bandwidth usage, making communication efficient. 
+•	Fast data transfer with low latency. 
+•	Can handle a large number of IoT devices efficiently. 
+•	Reliable communication using Quality of Service (QoS). 
