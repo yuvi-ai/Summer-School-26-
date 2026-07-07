@@ -1,0 +1,43 @@
+            START
+              │
+              ▼
+      Initialize ESP32
+              │
+              ▼
+ Read Soil Moisture Sensor
+              │
+              ▼
+      Read LDR Sensor
+              │
+              ▼
+ Is Manual Button Pressed?
+        │              │
+      Yes             No
+        │              │
+        ▼              ▼
+ Turn Pump ON     Check Soil Moisture
+ for 5 Minutes          │
+                        ▼
+              Is Soil Dry?
+                │         │
+              No         Yes
+               │          │
+               ▼          ▼
+          Pump OFF   Is It Dark
+                     (Possible Rain)?
+                     │          │
+                   Yes         No
+                    │           │
+                    ▼           ▼
+               Pump OFF     Pump ON
+                    │           │
+                    └──────┬────┘
+                           ▼
+      Display Moisture, Mode &
+     Last Watered Time on LCD
+                           │
+                           ▼
+    Send Data to Google Sheets
+                           │
+                           ▼
+                     Repeat Loop
