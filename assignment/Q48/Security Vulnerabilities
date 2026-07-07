@@ -1,0 +1,6 @@
+Vulnerability	Risk	Solution
+Hardcoded Wi-Fi SSID and Password	Credentials can be stolen if the code is shared.	Store credentials in config.h and exclude it using .gitignore.
+Using HTTP instead of HTTPS	Data can be intercepted or modified by attackers.	Use HTTPS with SSL/TLS encryption.
+Public MQTT Broker without Authentication	Anyone can publish or subscribe to messages.	Use MQTT username/password authentication and TLS.
+No Validation of Incoming Commands	Attackers can send malicious commands to the device.	Validate all received commands before executing them.
+No Data Encryption	Sensitive data is transmitted in plain text.	Encrypt communication using TLS/SSL.
