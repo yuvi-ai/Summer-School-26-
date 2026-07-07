@@ -1,0 +1,26 @@
+No Data Encryption	Sensitive data is transmitted in plain text.	Encrypt communication using TLS/SSL.
+Corrected Code 1 (Store Credentials Securely)
+#include "config.h"
+const char* ssid=WIFI_SSID;
+const char* password=WIFI_PASSWORD;
+config.h
+#define WIFI_SSID "Your_WiFi_Name"
+#define WIFI_PASSWORD "Your_WiFi_Password"
+________________________________________
+Corrected Code 2 (Use HTTPS Instead of HTTP)
+WiFiClientSecure client;
+HTTPClient https;
+https.begin(client,"https://example.com/api");
+int httpCode=https.GET();
+________________________________________
+Corrected Code 3 (Validate Commands)
+String cmd=receivedCommand;
+if(cmd=="ON"){
+digitalWrite(LED,HIGH);
+}
+else if(cmd=="OFF"){
+digitalWrite(LED,LOW);
+}
+else{
+Serial.println("Invalid Command");
+}
