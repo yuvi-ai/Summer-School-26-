@@ -1,0 +1,43 @@
+.                  START
+                   │
+                   ▼
+            Initialize ESP32
+                   │
+                   ▼
+ Initialize MAX30102/LDR, LCD,
+ LED and Data Log File
+                   │
+                   ▼
+     Read Heart Rate & SpO₂
+                   │
+                   ▼
+ Calculate 5-Reading Rolling Average
+                   │
+                   ▼
+ Display Values on LCD
+                   │
+                   ▼
+ Is Heart Rate <50 or >120?
+                   │
+          ┌────────┴────────┐
+          ▼                 ▼
+         Yes               No
+          │                 │
+          ▼                 ▼
+     Turn ON Red LED   Is SpO₂ <94%?
+                            │
+                   ┌────────┴────────┐
+                   ▼                 ▼
+                  Yes               No
+                   │                 │
+                   ▼                 ▼
+            Turn ON Red LED    LED OFF
+                   │
+                   ▼
+      Save Data to health_log.csv
+                   │
+                   ▼
+           Wait 2 Seconds
+                   │
+                   ▼
+              Repeat Loop
