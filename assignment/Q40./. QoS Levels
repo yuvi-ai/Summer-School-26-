@@ -1,0 +1,12 @@
+QoS Level	Meaning	Description
+QoS 0	At most once	Message is sent only once. No confirmation is received.
+QoS 1	At least once	Message is guaranteed to arrive, but it may be delivered more than once.
+QoS 2	Exactly once	Message is delivered only once with the highest reliability.
+Which QoS is Best for an IoT Water Level Monitoring System?
+Answer: QoS 1 (At least once)
+Reason:
+•	Ensures that important water level data reaches the server. 
+•	Slight duplicate messages are acceptable. 
+•	Lower overhead than QoS 2. 
+•	More reliable than QoS 0. 
+•	Commonly used in IoT monitoring applications.
