@@ -1,0 +1,41 @@
+.                     START
+                      │
+                      ▼
+             Initialize ESP32
+                      │
+                      ▼
+        Initialize MQ-2, DHT11,
+      RGB LED, Buzzer & Bluetooth
+                      │
+                      ▼
+         Read MQ-2 Gas Sensor Value
+                      │
+                      ▼
+      Read Temperature & Humidity
+             from DHT11 Sensor
+                      │
+                      ▼
+         Compare Gas Value with
+          Predefined Thresholds
+                      │
+          ┌───────────┼───────────┐
+          ▼           ▼           ▼
+        SAFE      MODERATE     DANGER
+          │           │           │
+ Green LED ON   Yellow LED ON  Red LED ON
+ Short Beep     Medium Beep    Long Beep
+          │           │           │
+          └───────────┼───────────┘
+                      ▼
+      Display Data on Serial Monitor
+      (CSV Format with Timestamp)
+                      │
+                      ▼
+      Send Alert to Mobile via
+      Bluetooth (if Warning/Danger)
+                      │
+                      ▼
+            Wait 2 Seconds
+                      │
+                      ▼
+               Repeat Loop
