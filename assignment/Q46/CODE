@@ -1,0 +1,40 @@
+Start
+Initialize ESP32
+Initialize HC-SR04
+Initialize LEDs
+Initialize Buzzer
+Initialize Wi-Fi
+Initialize Dashboard
+Loop
+Read Distance
+Calculate Moving Average
+If Distance > 30
+Turn ON Green LED
+Turn OFF Yellow LED
+Turn OFF Red LED
+Buzzer OFF
+Level = NORMAL
+Else If Distance > 15
+Turn ON Yellow LED
+Turn OFF Green LED
+Turn OFF Red LED
+Medium Beep
+Level = WARNING
+Else
+Turn ON Red LED
+Turn OFF Green LED
+Turn OFF Yellow LED
+Fast Beep
+Level = CRITICAL
+End If
+Send Alert Message
+Update Dashboard Graph
+Print Distance and Level
+Wait 2 Seconds
+Repeat
+Sample seriaql monitor
+Time,Distance(cm),Water Level,Status
+10:00:00,42,NORMAL,SAFE
+10:00:02,28,WARNING,ALERT
+10:00:04,12,CRITICAL,DANGER
+10:00:06,10,CRITICAL,DANGER
